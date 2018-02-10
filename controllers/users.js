@@ -6,7 +6,6 @@ module.exports = function (_, passport, User) {
         SetRouting: function (router) {
             router.get('/', this.indexPage);
             router.get('/signup', this.getSignUp);
-            router.get('/home', this.homePage);
 
             router.post('/signup', User.SignUpValidation,  this.postSignUp);
             router.post('/', User.LoginValidation,  this.postLogin);
@@ -40,16 +39,7 @@ module.exports = function (_, passport, User) {
             successRedirect: '/home',
             failureRedirect: '/',
             failureFlash: true
-        }),
-
-        homePage: function (req, res) {
-            const errors = req.flash('error');
-            let hasError = false;
-            if(errors) {
-                hasError = errors.length > 0;
-            }
-            return res.render('home', {title: 'Invictus | Home', messages: errors, hasErrors: hasError});
-        }
+        })
     }
 
 };

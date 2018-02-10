@@ -12,7 +12,7 @@ const flash     =   require('connect-flash');
 const passport  =   require('passport');
 const container =   require('./container');
 
-container.resolve(function(users, _ ) {
+container.resolve(function(users, _ , admin, home) {
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost:27017/student', (err)=>{
         if(err){
@@ -37,6 +37,8 @@ container.resolve(function(users, _ ) {
 
         const router = require('express-promise-router')();
         users.SetRouting(router);
+        admin.SetRouting(router);
+        home.SetRouting(router);
 
         app.use(router);
     }
