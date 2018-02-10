@@ -9,7 +9,8 @@ const simpleDependencies = [
     ['formidable', 'formidable'],
     ['async', 'async'],
     ['Group', './models/group'],
-    ['aws', './helpers/AWSUpload']
+    ['aws', './helpers/AWSUpload'],
+    ['Users', './models/user']
 ];
 
 simpleDependencies.forEach((val) => {

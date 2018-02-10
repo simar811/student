@@ -3,7 +3,7 @@ module.exports = function(async, Group, _){
     return {
         SetRouting: function(router){
             router.get('/home', this.homePage);
-
+            router.get('/logout', this.logout);
         },
 
         homePage: function(req, res){
@@ -29,6 +29,13 @@ module.exports = function(async, Group, _){
                 console.log(dataChunk);
 
                 res.render('home', {title: 'Invictus - Home', user: req.user, chunks: dataChunk})
+            })
+        },
+
+        logout: function (req, res) {
+            req.logout();
+            req.session.destroy((err) => {
+                res.redirect('/');
             })
         }
     }

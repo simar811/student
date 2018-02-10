@@ -22,12 +22,6 @@ $(document).ready(function(){
             ol.append('<p>'+users[i]+'</p>');
         }
 
-        $(document).on('click', '#val', function(){
-            $('#name').text('@'+$(this).text());
-            $('#receiverName').val($(this).text());
-            $('#nameLink').attr("href", "/profile/"+$(this).text());
-        });
-
         $('#numValue').text('('+users.length+')');
         $('#users').html(ol);
     });
