@@ -10,7 +10,8 @@ const simpleDependencies = [
     ['async', 'async'],
     ['Group', './models/group'],
     ['aws', './helpers/AWSUpload'],
-    ['Users', './models/user']
+    ['Users', './models/user'],
+    ['GroupMessageDependency', './models/groupmessage']
 ];
 
 simpleDependencies.forEach((val) => {

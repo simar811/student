@@ -1,7 +1,9 @@
-module.exports = function(Users) {
+module.exports = function(Users, async, GroupMessageDependency) {
     return {
         SetRouting: function (router) {
             router.get('/group/:name', this.groupPage);
+            router.post('/group/:name', this.groupPostPage);
+            router.get('/logout', this.logout);
         },
 
         groupPage: function (req, res) {
@@ -14,6 +16,28 @@ module.exports = function(Users) {
             req.session.destroy((err) => {
                 res.redirect('/');
             })
+        },
+
+        groupPostPage: function(req, res){
+
+            async.parallel([
+                function(callback){
+                    if(req.body.message){
+                        const group = new GroupMessageDependency();
+                        group.sender = req.user._id;
+                        group.body = req.body.message;
+                        group.name = req.body.groupName;
+                        group.createdAt = new Date();
+
+                        group.save((err, msg) => {
+                            console.log(msg);
+                            callback(err, msg);
+                        });
+                    }
+                }
+            ], (err, results) => {
+                res.redirect('/group/'+req.params.name);
+            });
         }
     }
 };
