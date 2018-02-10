@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 
 const userSchema = mongoose.Schema({
-    username: {type: String, unique: true, default: ''},
-    fullname: {type: String, unique: true, default: ''},
+    username: {type: String, unique: true},
+    fullname: {type: String, default: ''},
     email: {type: String, unique: true},
     password: {type: String, default: ''},
     userImage: {type: String, default: 'defaultPic.png'},
