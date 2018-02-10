@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Footballkik</title>
+    <title>Invictus</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -47,6 +47,7 @@
 
                                 </li>
 
+
                                 <li class="reg_link2">
                                     <h2 class="reg-div">
                                         <a href="/signup">
@@ -65,36 +66,39 @@
 
 <div id="main">
     <div class="main">
-        <form action="/" method="post">
-            
+        <form action="/signup" method="post">
             <h1>
                 <a href="/auth/facebook" class="btn-social btn-facebook btn-lg">
-                    <i class="fa fa-facebook"></i> Login With Facebook
+                    <i class="fa fa-facebook"></i> Sign Up With Facebook
                 </a>
             </h1>
             
             <h1>
                 <a href="/auth/google" class="btn-social btn-gplus btn-lg">
-                    <i class="fa fa-google-plus"></i> Login With Google
+                    <i class="fa fa-google-plus"></i> Sign Up With Google
                 </a>
             </h1>
 
             <h1>
-                Login
+                Register
             </h1>
             
             <% if(hasErrors) {%>
-
-                <% _.forEach(messages, function(error){ %>
-                      <div class="alert alert-danger text-center">
-                           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                           <%= error %><br>
-                      </div>
-                <% }) %>
-
+                <div class="alert alert-danger text-center">
+                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                   <% _.forEach(messages, function(error){ %>
+                       <%= error %><br>
+                   <% }) %>
+                    
+                </div>
             <% } %>
 
             <div class="inset">
+                <p>
+                  <label for="username">USERNAME</label>
+                  <input type="text" name="username" class="" placeholder="">
+                </p>
+
                 <p>
                     <label for="email">EMAIL ADDRESS</label>
                     <input type="text" name="email" placeholder="" />
@@ -107,8 +111,9 @@
             </div>
 
             <p class="p-container">
-                <span><a href="/signup">Not Yet Registered?</a></span>
-                <input type="submit" class="login-log" style=" background: #3bb5ec; border: #3bb5ec;" value="Login">
+                <span><a href="" style="color:white;padding-left:10px;padding-right:10px">|</a></span>
+                <span><a href="/">Login</a></span>
+                <input type="submit" class="login-log" style=" background: #3bb5ec; border: #3bb5ec;" value="Register">
             </p>
         </form>
     </div>

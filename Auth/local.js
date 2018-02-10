@@ -31,15 +31,13 @@ passport.use('local.signup', new LocalStrategy({
             'email': email
         })
             .then((user) => {
-                console.log("User is");
-                console.log(user);
                 if(user) {
-                    return done(null, false, {message: "User already exists"});
+                    return done(null, false, req.flash('error', 'User exists'));
                 }
                 var newUser = new User();
                 newUser.email = req.body.email;
                 newUser.name = req.body.name;
-                newUser.password = newUser.encryptPass(req.body.password);
+                newUser.password = newUser.encryptPassword(req.body.password);
 
                 newUser.save()
                     .then((nuser) => {
@@ -63,8 +61,10 @@ passport.use('local.login', new LocalStrategy({
         'email': email
     })
         .then((user) => {
-            if(!user || !user.isValidPass(password)) {
-                return done(null, false);
+            const messages = [];
+            if(!user || !user.validUserPassword(password)) {
+                messages.push('Email Does Not Exist or Password is Invalid');
+                return done(null, false, req.flash('error', messages));
             }
             return done(null, user);
         })

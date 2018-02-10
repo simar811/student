@@ -8,14 +8,19 @@ const validator =   require('express-validator');
 const session   =   require('express-session');
 const MongoStore=   require('connect-mongo')(session);
 const mongoose  =   require('mongoose');
+const flash     =   require('connect-flash');
 const passport  =   require('passport');
 const container =   require('./container');
 
-container.resolve(function(users) {
-
+container.resolve(function(users, _ ) {
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://localhost/student', {
-        useMongoClient: true
+    mongoose.connect('mongodb://localhost:27017/student', (err)=>{
+        if(err){
+            console.log("Error" + err);
+        }
+        else {
+            console.log("Database Ready ");
+        }
     });
 
     const app   =   SetupExpress();
@@ -50,9 +55,12 @@ container.resolve(function(users) {
             secret: 'This is Secret',
             resave: true,
             saveUninitialized: true,
-            store: new MongoStore({mongooseCollection: mongoose.collection})
+            store: new MongoStore({mongooseConnection: mongoose.connection})
         }));
+        app.use(flash());
         app.use(passport.initialize());
         app.use(passport.session());
+
+        app.locals._ = _;
     }
 });

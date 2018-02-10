@@ -1,38 +1,23 @@
-const mongoose      =   require('mongoose');
+
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt-nodejs');
 
 const userSchema = mongoose.Schema({
-    name: {
-        type: String,
-        unique: true
-    },
-    email: {
-        type: String,
-        unique: true
-    },
-    password: {
-        type: String,
-    },
-    userimage: {
-        type: String,
-        default: ''
-    },
-    facebook: {
-        type: String,
-        default: ''
-    },
+    username: {type: String, unique: true, default: ''},
+    fullname: {type: String, unique: true, default: ''},
+    email: {type: String, unique: true},
+    password: {type: String, default: ''},
+    userImage: {type: String, default: 'defaultPic.png'},
+    facebook: {type: String, default: ''},
     fbTokens: Array,
-    google: {
-        type: String,
-        default: ''
-    },
-    googleTokens: Array
+    google: {type: String, default: ''}
 });
 
-userSchema.methods.encryptPass = function (password) {
+userSchema.methods.encryptPassword = function(password){
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
 };
 
-userSchema.methods.isValidPass = function (password) {
+userSchema.methods.validUserPassword = function(password){
     return bcrypt.compareSync(password, this.password);
 };
 
