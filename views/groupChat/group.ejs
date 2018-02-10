@@ -36,6 +36,9 @@
                                         <div class="cover">
 
                                         </div>
+                                        <div class="user cover-img">
+                                            <img src="https://footballkik.s3.amazonaws.com/<%= user.userImage %>" class="img-circle" alt="">
+                                        </div>
                                         <div class="content">
                                             <div class="main">
                                                 <h3 class="name"><%= _.upperFirst(user.username) %></h3>
@@ -72,7 +75,7 @@
                                                 <p class="friends" style="margin-bottom:0px;">
                                                     Online Friends <span id="numOfFriends"></span>
                                                 </p>
-                                                <hr style="margin-top:10px" />
+
 
                                                 <div class="onlineFriends"></div>
 
@@ -103,6 +106,7 @@
 
                         <div class="chat_area">
                             <ul id="messages" class="list-unstyled">
+
 
                             </ul>
 
@@ -145,7 +149,7 @@
                         <div class="pull-left">
                             <button class="club_fans">
                                 <i class="fa fa-users" aria-hidden="true" style="padding-right:15px; color:#4aa1f3 !important;"></i>
-                                Online Club Fans <span id="numValue"></span>
+                                Online Students <span id="numValue"></span>
                             </button>
                         </div>
                     </div>
@@ -153,35 +157,6 @@
 
 
                     <div class="gr-rightsidebar">
-
-                        <div id="myModal" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
-
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h3 class="modal-title" id="name"></h3>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="" method="post" id="add_friend">
-                                            <input type="hidden" name="receiverName" id="receiverName" value="">
-                                            <input type="hidden" name="sender-name" id="sender-name" value="<%= user.username %>">
-                                            <button type="submit" id="friend-add" class="btn add"><i class="fa fa-user"></i> Add Friend</button>
-
-                                            <a id="nameLink" class="btn">View Profile</a>
-
-                                            <div id="myTest">
-
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn_close" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
 
                         <div class="col-md-12"  id="main">
                             <div id="users"></div>

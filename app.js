@@ -12,6 +12,7 @@ const flash     =   require('connect-flash');
 const passport  =   require('passport');
 const container =   require('./container');
 const socketIO  =   require('socket.io');
+const {Users}   =   require('./helpers/usersClass');
 
 container.resolve(function(users, _ , admin, home, groupController) {
     mongoose.Promise = global.Promise;
@@ -37,7 +38,7 @@ container.resolve(function(users, _ , admin, home, groupController) {
 
         configureExpress(app);
 
-        require('./socket/groupChat')(io);
+        require('./socket/groupChat')(io, Users);
 
         const router = require('express-promise-router')();
         users.SetRouting(router);

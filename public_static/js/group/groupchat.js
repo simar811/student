@@ -15,6 +15,23 @@ $(document).ready(function(){
         });
     });
 
+    socket.on('usersList', function(users){
+        var ol = $('<ol></ol>');
+
+        for(var i = 0; i < users.length; i++){
+            ol.append('<p>'+users[i]+'</p>');
+        }
+
+        $(document).on('click', '#val', function(){
+            $('#name').text('@'+$(this).text());
+            $('#receiverName').val($(this).text());
+            $('#nameLink').attr("href", "/profile/"+$(this).text());
+        });
+
+        $('#numValue').text('('+users.length+')');
+        $('#users').html(ol);
+    });
+
     socket.on('newMessage', function(data){
         console.log("Data");
         console.log(data);
