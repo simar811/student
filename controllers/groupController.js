@@ -8,7 +8,21 @@ module.exports = function(Users, async, GroupMessageDependency) {
 
         groupPage: function (req, res) {
             const name = req.params.name;
-            res.render('groupChat/group', {title: 'Invictus | Group', name: name, user: req.user, groupName: name});
+
+            async.parallel([
+                function(callback){
+                    GroupMessageDependency.find({})
+                        .populate('sender')
+                        .exec((err, result) => {
+                            console.log(result);
+                            callback(err, result)
+                        });
+                }
+            ], (err, results) => {
+                const result3 = results[0];
+
+                res.render('groupchat/group', {title: 'Invictus | Group', user:req.user, groupName:name, groupMsg: result3});
+            });
         },
 
         logout: function (req, res) {
