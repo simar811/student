@@ -11,8 +11,9 @@ const mongoose  =   require('mongoose');
 const flash     =   require('connect-flash');
 const passport  =   require('passport');
 const container =   require('./container');
+const socketIO  =   require('socket.io');
 
-container.resolve(function(users, _ , admin, home) {
+container.resolve(function(users, _ , admin, home, groupController) {
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost:27017/student', (err)=>{
         if(err){
@@ -29,16 +30,20 @@ container.resolve(function(users, _ , admin, home) {
         const app = express();
         const server = http.createServer(app);
 
+        const io = socketIO(server);
         server.listen(3000, () => {
             console.log("Server running at 3000");
         });
 
         configureExpress(app);
 
+        require('./socket/groupChat')(io);
+
         const router = require('express-promise-router')();
         users.SetRouting(router);
         admin.SetRouting(router);
         home.SetRouting(router);
+        groupController.SetRouting(router);
 
         app.use(router);
     }
