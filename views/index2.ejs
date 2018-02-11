@@ -44,26 +44,13 @@
         <!-- Navbar Menu (same as Collapse Menu also) -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <!-- EVENTS Dropdown -->
-                <li class="nav-item dropdown">
-                    <!-- Dropdown -->
-                    <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Events
-                    </a>
-                    <!-- Dropdown Menu -->
-                    <div class="dropdown-menu" aria-labelledby="eventsDropdown">
-                        <a class="dropdown-item" href="#">Trending Events</a>
-                        <a class="dropdown-item" href="#">Recent Events</a>
-                        <a class="dropdown-item" href="/events/show">All Events</a>
-                    </div>
-                </li>
+
 
                 <!-- Login/Signup or Hi, User! -->
                 <!-- Display Login/Signup if not logged in -->
                 <% if(!user) { %>
                 <li class="nav-item">
-                    <a class="nav-link" href="/loginsignup">Login/SignUp</a>
+                    <a class="nav-link" href="/">Login/SignUp</a>
                 </li>
                 <!-- Display User Dropdown if Logged in -->
                 <% } else { %>
@@ -136,7 +123,7 @@
         </div>
         <div class="row mb-5">
             <div class="col-12 text-center">
-                <a href="#trending" id="get-started-btn" class="btn btn-primary btn-lg">Get Started</a>
+                <a href="/" id="get-started-btn" class="btn btn-primary btn-lg">Get Started</a>
             </div>
         </div>
     </div>

@@ -8,6 +8,11 @@ module.exports = function(async, Group, _, Test){
             router.get('/createTest', this.createTest);
             router.post('/test', this.postTest);
             router.get('/test/:id', this.getTest);
+            router.get('/front', this.front);
+        },
+
+        front: function (req, res) {
+            res.render('index2', {user: req.user});
         },
 
         homePage: function(req, res){

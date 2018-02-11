@@ -16,7 +16,7 @@ a:hover {
 
 #landing-section {
     height: 100vh;
-    background-image: url("backgroung-image.jpg");
+    background-image: url("/backgroung-image.jpg");
     background-size: cover;
     background-position: bottom center;
     padding-top: 30vh;
