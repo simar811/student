@@ -19,7 +19,7 @@ $(document).ready(function(){
         var ol = $('<ol></ol>');
 
         for(var i = 0; i < users.length; i++){
-            ol.append('<p>'+users[i]+'</p>');
+            ol.append('<p>'+'<i class="fa fa-circle online" aria-hidden="true"></i> '+ users[i]+'</p>');
         }
 
         $('#numValue').text('('+users.length+')');

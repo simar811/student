@@ -14,12 +14,12 @@ body {
 }
 
 .logo-div a{
-    color: #4aa1f3 !important;
+    color: #f3b01d !important;
     text-decoration: none !important;
 }
 
 .reg-div a{
-    color: #4aa1f3 !important;
+    color: #f3b01d !important;
     font-size:18px;
     text-decoration:none !important;
     z-index: 1000;
@@ -32,7 +32,7 @@ body {
 }
 
 #main{
-    background: #4aa1f3 !important;
+    background: #f3b01d !important;
     border: 1px solid white;
     height: 100%;
 /*    min-height: 300px;*/
@@ -91,7 +91,7 @@ form h1 {
 
 
 form h1 {
-    color: #4aa1f3;
+    color: #f3b01d;
     /*text-shadow: 0 1px 0 #000;*/
     font-size: 35px;
     font-weight: 600;
@@ -223,7 +223,7 @@ footer .container .text-muted {
 }
 
 .btn-facebook{
-    background: #4aa1f3;
+    background: #f3b01d;
     border-radius: 0;
     color: #fff;
     width: 100px;
@@ -232,11 +232,11 @@ footer .container .text-muted {
 .btn-facebook:link, .btn-facebook:visited {
     color: #fff;
     text-decoration: none;
-    background: #4aa1f3;
+    background: #f3b01d;
 }
 
 .btn-facebook:active, .btn-facebook:hover {
-    background: #4aa1f3;
+    background: #f3b01d;
     color: #fff;
 }
 

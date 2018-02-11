@@ -4,6 +4,7 @@ module.exports = function(async, Group, _){
         SetRouting: function(router){
             router.get('/home', this.homePage);
             router.get('/logout', this.logout);
+            router.get('/members', this.getMembers);
         },
 
         homePage: function(req, res){
@@ -37,6 +38,10 @@ module.exports = function(async, Group, _){
             req.session.destroy((err) => {
                 res.redirect('/');
             })
+        },
+
+        getMembers: function (req, res) {
+            res.send('<h1>Coming Soon !</h1>');
         }
     }
 }

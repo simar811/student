@@ -6,7 +6,7 @@ body {
 }
 
 .navbar{
-    background-color: #4aa1f3;
+    background-color: #f3b01d;
 }
 
 .navbar-default .navbar-brand{
@@ -18,19 +18,19 @@ body {
 
 .navbar-brand:hover{
     color: #ffffff !important;
-    background-color: #4aa1f3 !important;
+    background-color: #f3b01d !important;
 }
 
 .navbar-default .navbar-nav > li > a{
     color: #fff !important;
-    background-color: #4aa1f3 !important;
+    background-color: #f3b01d !important;
     font-size: 16px;
     font-weight: bold;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
     color: #fff !important;
-    background-color: #4aa1f3 !important;
+    background-color: #f3b01d !important;
 }
 
 #custom-search-input {
@@ -85,7 +85,7 @@ body {
 }
 
 .input-btn {
-    background: #4aa1f3;
+    background: #f3b01d;
     border-top-right-radius: 25px !important;
     border-bottom-right-radius: 25px !important;
     padding-left: 23px;
@@ -106,7 +106,7 @@ body {
 }
 
 .add-apply{
-    background: #4aa1f3;
+    background: #f3b01d;
     width: 100%;
     text-shadow: none;
     color: #ffffff !important;
@@ -115,7 +115,7 @@ body {
 }
 
 .add-fav{
-    background: #4aa1f3;
+    background: #f3b01d;
     width: 100%;
     text-shadow: none;
     color: #ffffff !important;
@@ -174,7 +174,7 @@ body {
 }
 
 .drop-accept {
-    background: #4aa1f3 !important;
+    background: #f3b01d !important;
     border: #3bb5ec;
     color: white !important;
     text-shadow: none;
