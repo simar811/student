@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 var groupMessage = mongoose.Schema({
+    index: {type: Number},
     sender: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     body: {type: String},
     name: {type: String},

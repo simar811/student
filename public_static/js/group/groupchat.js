@@ -3,6 +3,7 @@ $(document).ready(function(){
 
     var room = $('#groupName').val();
     var sender = $('#sender').val();
+    var channelForm = $('#channelForm').val();
 
     socket.on('connect', function(){
 
@@ -43,6 +44,7 @@ $(document).ready(function(){
     $('#message-form').on('submit', function(e){
         e.preventDefault();
 
+
         var msg = $('#msg').val();
         console.log("Message");
 
@@ -60,7 +62,8 @@ $(document).ready(function(){
             type: 'POST',
             data: {
                 message: msg,
-                groupName: room
+                groupName: room,
+                channelForm: Number(channelForm)
             },
             success: function(){
                 $('#msg').val('');

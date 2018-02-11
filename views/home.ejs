@@ -31,15 +31,15 @@
                             <% _.forEach(val, function(val2) { %>
                             <form action="/home" method="post" id="favorite">
                                 <div class="item row" style="margin-top: 10px; background: white;">
-                                    <a style="text-decoration:none" href="/group/<%= val2.name.replace(/ /g, "-") %>">
+
                                         <div class="thumbnail">
                                             <div class="col-lg-3">
                                                 <img src="https://invictus-hackeam.s3.amazonaws.com/<%= val2.image %>" alt="">
                                             </div>
-                                            <div class="col-lg-9">
+                                            <div class="col-lg-4">
                                                 <div class="caption">
                                                     <h1>
-                                                        <%= val2.name %> (<%= val2.students.length %>)
+                                                        <%= val2.name %>
                                                     </h1>
 
                                                     <div class="row">
@@ -56,8 +56,12 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-lg-5" style="margin-top: 50px;">
+                                                <a href="/group/<%= val2.name.replace(/ /g, "-") %>/1" class="btn-lg btn-danger">General Discussion</a>
+                                                <a href="/group/<%= val2.name.replace(/ /g, "-") %>/2" class="btn-lg btn-danger">Imp Updates</a>
+                                                <a href="/group/<%= val2.name.replace(/ /g, "-") %>/3" class="btn-lg btn-danger">Resources</a>
+                                            </div>
                                         </div>
-                                    </a>
                                 </div>
                             </form>
                             <% }) %>
