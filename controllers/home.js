@@ -1,10 +1,13 @@
 
-module.exports = function(async, Group, _){
+module.exports = function(async, Group, _, Test){
     return {
         SetRouting: function(router){
             router.get('/home', this.homePage);
             router.get('/logout', this.logout);
             router.get('/members', this.getMembers);
+            router.get('/createTest', this.createTest);
+            router.post('/test', this.postTest);
+            router.get('/test/:id', this.getTest);
         },
 
         homePage: function(req, res){
@@ -37,6 +40,41 @@ module.exports = function(async, Group, _){
 
         getMembers: function (req, res) {
             res.send('<h1>Coming Soon !</h1>');
+        },
+
+        createTest: function (req, res) {
+            res.render('test/createTest', {user: req.user});
+        },
+
+        postTest: function (req, res) {
+            const test = new Test();
+            test.name = req.body.name;
+            test.subject = req.body.subject;
+            test.createdBy = req.body.createdBy;
+            test.createdBy = req.body.createdBy;
+            test.content = req.body.content;
+
+            console.log("Test ");
+            console.log(test);
+
+            test.save((err, ntest)=>{
+                if(err){
+                    console.log(err);
+                }
+                else {
+                    return res.send('/test/' + test._id + '/');
+                }
+            })
+        },
+
+        getTest: function(req, res){
+            Test.findById(req.params.id)
+                .then((test)=>{
+                    res.render('test/giveTest', {test: test, user: req.user});
+                })
+                .catch((err)=>{
+                    console.log(err);
+                })
         }
     }
 }

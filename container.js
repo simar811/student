@@ -11,7 +11,8 @@ const simpleDependencies = [
     ['Group', './models/group'],
     ['aws', './helpers/AWSUpload'],
     ['Users', './models/user'],
-    ['GroupMessageDependency', './models/groupmessage']
+    ['GroupMessageDependency', './models/groupmessage'],
+    ['Test', './models/test']
 ];
 
 simpleDependencies.forEach((val) => {

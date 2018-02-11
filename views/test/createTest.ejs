@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Educo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<%- include ../partials/navbar.ejs %>
+
+<div class="container" style="text-align:center; margin-top:20px; padding: 10px; ">
+    <div class="col-lg-2 md-2 sm-1">
+
+    </div>
+
+    <div class="col-lg-8 md-8 sm-10 main-div" style="padding:10px;">
+        <form>
+
+            <h1>TEST</h1>
+            <p style="display: none;" id="user"><%= user.username %></p>
+            <div class="form-group">
+                <input id="testname" type="text" class="form-control" placeholder="Enter Test Name">
+            </div>
+            <div class="form-group">
+                <input id = "subject" type="text" class="form-control" placeholder="Enter Subject Name">
+            </div>
+            <br>
+            <br>
+
+            <div id="quesarea">
+
+
+
+            </div>
+
+            <button type="button" id="submit" class="btn btn-primary hideKardo">SUBMIT</button>
+            <button type="button" id="addques" class="btn btn-primary">ADD QUES</button>
+            <button type="button"  id="done" class ="btn btn-success">DONE</button>
+
+        </form>
+    </div>
+
+    <div class="col-lg-2 md-2 sm-1">
+
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/test/createTest.js"></script>
+</body>
+</html>

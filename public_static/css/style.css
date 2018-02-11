@@ -48,6 +48,9 @@ body {
     padding-right: 7px;
 }
 
+.hideKardo{
+    display: none;
+}
 #custom-search-input button {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: 0 none;
