@@ -197,6 +197,13 @@ body {
     height: 40px;
 }
 
+.wrong {
+    background: #ff9578;
+}
+
+.correct {
+    background: #aaf385;
+}
 
 
 

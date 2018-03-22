@@ -21,122 +21,63 @@
     </div>
     <h1 style="margin-left: 200px; font-weight: 700; font-size: 70px;"><%= test.name %></h1>
 
-    <div class="col-lg-8 md-8 sm-10 main-div p-4" style=" margin: auto;background: white;">
+    <h2 style="margin-left: 200px; font-weight: 400; font-size: 50px;"><%= test.subject %></h2>
+
+    <div id="testArea" class="col-lg-8 md-8 sm-10 main-div p-4" style=" margin: auto;background: white;">
         <form>
-            <div>
-                <span>
-                    <button type="button" class="btn btn-info">QUES.</button>
-                    <p>
-                        This is a question.
-                    </p>
-                </span>
-            </div>
+            <% _.forEach(test.content, function (val, i) { %>
+                <div id="questionNo<%=i%>">
+                    <div>
+                        <span>
+                            <button type="button" class="btn btn-info">QUES.<%= i+1 %></button>
+                            <p>
+                                <%= val.question%>
+                            </p>
+                        </span>
+                    </div>
 
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    Option one is this and that&mdash;be sure to inclu
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    Option two can be something else and selecting it will deselect option one
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    Option two can be something else and selecting it will deselect option one
-                </label>
-            </div>
-            <div class="form-check disabled">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-                    Option three is disabled
-                </label>
-            </div><br>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleRadios<%= i%>" id="exampleRadios" value="1">
+                            <%= val.options[0] %>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleRadios<%= i%>" id="exampleRadios2" value="2">
+                            <%= val.options[1] %>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleRadios<%= i%>" id="exampleRadios3" value="3">
+                            <%= val.options[2] %>
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleRadios<%= i%>" id="exampleRadios4" value="4" >
+                            <%= val.options[3] %>
+                        </label>
+                    </div><br>
+                </div>
+            <% })%>
         </form>
-
-        <form>
-            <div>
-                <span>
-                    <button type="button" class="btn btn-info">QUES.</button>
-                    <p>
-                        This is a question.
-                    </p>
-                </span>
-            </div>
-
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    Option one is this and that&mdash;be sure to inclu
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    Option two can be something else and selecting it will deselect option one
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    Option two can be something else and selecting it will deselect option one
-                </label>
-            </div>
-            <div class="form-check disabled">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-                    Option three is disabled
-                </label>
-            </div><br>
-        </form>
-
-        <form>
-            <div>
-                <span>
-                    <button type="button" class="btn btn-info">QUES.</button>
-                    <p>
-                        This is a question.
-                    </p>
-                </span>
-            </div>
-
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    Option one is this and that&mdash;be sure to inclu
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    Option two can be something else and selecting it will deselect option one
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    Option two can be something else and selecting it will deselect option one
-                </label>
-            </div>
-            <div class="form-check disabled">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-                    Option three is disabled
-                </label>
-            </div>
-            <div>
-                <button type="submit" class="btn btn-danger">End Test</button>
-            </div><br>
-        </form>
+        <button class="btn btn-lg btn-danger" id="submitBtn">Submit Test</button>
     </div>
 
-    <div class="col-lg-2 md-2 sm-1">
+    <div id="result" class="col-lg-8 md-8 sm-10 main-div p-4" style=" margin: auto;">
 
     </div>
 </div>
+
+<p type="hidden" id="totalQues"><%= test.content.length%></p>
+
+<% _.forEach(test.content, function (val,i) { %>
+    <p type="hidden" id="ans<%= i%>"><%= val.answer %></p>
+<% }) %>
+
+<script src="/js/test/result.js"></script>
 </body>
 </html>
+

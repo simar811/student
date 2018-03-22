@@ -10,7 +10,7 @@ $(document).ready(function(){
         var params = {
             room: room,
             name: sender
-        }
+        };
         socket.emit('join', params, function(){
             console.log('User has joined this channel'+params.room);
         });
